@@ -1,21 +1,27 @@
-import { useEvent } from 'expo';
-import ExpoIR, { ExpoIRView } from 'expo-ir';
+// import { useEvent } from 'expo';
+import ExpoIR from 'expo-ir';
 import { Button, SafeAreaView, ScrollView, Text, View } from 'react-native';
 
 export default function App() {
-  const onChangePayload = useEvent(ExpoIR, 'onChange');
+  // const onChangePayload = useEvent(ExpoIR, 'onChange');
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.container}>
         <Text style={styles.header}>Module API Example</Text>
-        <Group name="Constants">
-          <Text>{ExpoIR.PI}</Text>
-        </Group>
         <Group name="Functions">
-          <Text>{ExpoIR.hello()}</Text>
+          <Text>{`Infrared Blaster:`}</Text>
+          <Text>{`${ExpoIR.isSupporting() ? "True" : "False"}`}</Text>
         </Group>
-        <Group name="Async functions">
+        <Group name="Transmit">
+          <Button
+            title="Transmit data"
+            onPress={() => {
+              ExpoIR.transmit(38000, [169, 168, 21, 63, 21, 63, 21, 63, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 63, 21, 63, 21, 63, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 63, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 64, 21, 21, 21, 63, 21, 63, 21, 63, 21, 63, 21, 63, 21, 63, 21, 1794, 169, 168, 21, 21, 21, 3694]);
+            }}
+          />
+        </Group>
+        {/* <Group name="Async functions">
           <Button
             title="Set value"
             onPress={async () => {
@@ -25,14 +31,7 @@ export default function App() {
         </Group>
         <Group name="Events">
           <Text>{onChangePayload?.value}</Text>
-        </Group>
-        <Group name="Views">
-          <ExpoIRView
-            url="https://www.example.com"
-            onLoad={({ nativeEvent: { url } }) => console.log(`Loaded: ${url}`)}
-            style={styles.view}
-          />
-        </Group>
+        </Group> */}
       </ScrollView>
     </SafeAreaView>
   );

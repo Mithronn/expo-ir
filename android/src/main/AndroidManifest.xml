@@ -1,2 +1,4 @@
-<manifest>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="expo.modules.ir">
+<uses-permission android:name="android.permission.TRANSMIT_IR" android:required="false" />
+<uses-feature android:name="android.hardware.consumerir" />
 </manifest>

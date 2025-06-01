@@ -1,11 +1,16 @@
 import { NativeModule, requireNativeModule } from 'expo';
 
-import { ExpoIRModuleEvents } from './ExpoIR.types';
+type ExpoIRModuleEvents = {
+  onChange: (params: ChangeEventPayload) => void;
+};
+
+type ChangeEventPayload = {
+  value: string;
+};
 
 declare class ExpoIRModule extends NativeModule<ExpoIRModuleEvents> {
-  PI: number;
-  hello(): string;
-  setValueAsync(value: string): Promise<void>;
+  isSupporting(): boolean
+  transmit(frequency: number, pattern: Array<number>): void
 }
 
 // This call loads the native module object from the JSI.

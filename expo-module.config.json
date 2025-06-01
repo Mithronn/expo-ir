@@ -1,9 +1,16 @@
 {
-  "platforms": ["apple", "android", "web"],
+  "platforms": [
+    "apple",
+    "android"
+  ],
   "apple": {
-    "modules": ["ExpoIRModule"]
+    "modules": [
+      "ExpoIRModule"
+    ]
   },
   "android": {
-    "modules": ["expo.modules.ir.ExpoIRModule"]
+    "modules": [
+      "expo.modules.ir.ExpoIRModule"
+    ]
   }
 }
