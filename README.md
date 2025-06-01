@@ -1,5 +1,4 @@
 # <div align="center">
-<p>
   <a href="https://github.com/Mithronn/expo-ir/">
     <img
       src="assets/logo.png"
@@ -7,12 +6,9 @@
       height="64" 
       width="64" />
   </a>
+  
+  Infrared Sensors
 </p>
-
-# <p>
-Infrared Sensors
-</p>
-</div>
 
 Provides access to device's infrared sensor. 
 
